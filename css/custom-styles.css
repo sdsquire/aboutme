@@ -1,9 +1,18 @@
+:root {
+  --primary-color: #2d50c4; 
+  --background-color: #eee
+}
+body, nav {
+  margin: 0;
+  padding: 0;
+  background: var(--background-color)
+}
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #2d50c4; 
+    background-color: var(--primary-color)
   }
   
   nav ul li {
@@ -19,7 +28,8 @@ nav ul {
   }
   
   nav ul li a:hover {
-    background-color: #111; /* Hover effect color */
+    background-color: black; /* Hover effect color */
+    color: white;
   }
   
   .dropdown-content {
@@ -44,11 +54,12 @@ nav ul {
   }
   
   .profile-image{
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     display: block;
     margin: 0 auto;
+    margin-top: 20px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border: 10px solid rgb(118, 187, 187)
+    border: 10px solid teal/*#76bbbb*/
   }
