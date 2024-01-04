@@ -1,11 +1,25 @@
 :root {
   --primary-color: #2d50c4; 
-  --background-color: #eee
+  --background-color: #eee;
+  --highlight-color: teal;
+  --shadow-color: dark grey;
 }
+
 body, nav {
   margin: 0;
   padding: 0;
   background: var(--background-color)
+}
+
+.body-placeholder{
+  margin: 50;
+  padding: 50;
+}
+
+.textbox {
+  padding: 10;
+  border: var(--shadow-color);
+  color: light teal;
 }
 nav ul {
     list-style-type: none;
@@ -61,5 +75,5 @@ nav ul {
     margin: 0 auto;
     margin-top: 20px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border: 10px solid teal/*#76bbbb*/
+    border: 10px solid var(--highlight-color)
   }

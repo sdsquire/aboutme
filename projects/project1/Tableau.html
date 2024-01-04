@@ -12,209 +12,211 @@
 <body>
     <div id="header-placeholder"></div>
     <script src="/js/loadHeader.js"></script>
-    <div class="summary_box">
-        <h2>National Production Analysis </h2>
-        A global superstore selling several products for offices has published their data.
-        Here are several findings from looking at this data, depected in a series of live Tableau graphs.
-        <div class="navlink_box" id="navlink_box">
-            <a class="navlink" href="#Profit_by_US_State">Figure 1: Profit by State</a><br>
-            <a class="navlink" href="#California_Month_By_Month">Figure 2: Profit by Month</a><br>
-            <a class="navlink" href="#California_Profits_by_Category">Figure 3: Profit by Category</a><br>
-            <a class="navlink" href="#California_Technology_Forecast">Figure 4: 2-year Projection</a><br>
-            <a class="navlink" href="#California_Profits_by_Urgency">Figure 5: Profit by urgency</a><br>
+    <div id="full" class="body-placeholder textbox">
+        <div class="summary_box">
+            <h2>National Production Analysis </h2>
+            A global superstore selling several products for offices has published their data.
+            Here are several findings from looking at this data, depected in a series of live Tableau graphs.
+            <div class="navlink_box" id="navlink_box">
+                <a class="navlink" href="#Profit_by_US_State">Figure 1: Profit by State</a><br>
+                <a class="navlink" href="#California_Month_By_Month">Figure 2: Profit by Month</a><br>
+                <a class="navlink" href="#California_Profits_by_Category">Figure 3: Profit by Category</a><br>
+                <a class="navlink" href="#California_Technology_Forecast">Figure 4: 2-year Projection</a><br>
+                <a class="navlink" href="#California_Profits_by_Urgency">Figure 5: Profit by urgency</a><br>
+            </div>
         </div>
-    </div>
 
-    <div class="table_container Left_Image" id="Profit_by_US_State">
-        <div class='tableauPlaceholder' id='viz1649882159299'>
-            <noscript>
-                <a href='#'>
-                    <img alt='Profit by state ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;Profit_by_US_State&#47;Sheet1&#47;1_rss.png' style='border: none' />
-                </a>
-            </noscript>
-            <object class='tableauViz'  style='display:none;'>
-                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
-                <param name='embed_code_version' value='3' /> 
-                <param name='site_root' value='' />
-                <param name='name' value='Profit_by_US_State&#47;Sheet1' />
-                <param name='tabs' value='no' />
-                <param name='toolbar' value='yes' />
-                <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;Profit_by_US_State&#47;Sheet1&#47;1.png' /> 
-                <param name='animate_transition' value='yes' />
-                <param name='display_static_image' value='yes' />
-                <param name='display_spinner' value='yes' />
-                <param name='display_overlay' value='yes' />
-                <param name='display_count' value='yes' />
-                <param name='language' value='en-US' />
-                <param name='filter' value='publish=yes' />
-            </object>
+        <div class="table_container Left_Image" id="Profit_by_US_State">
+            <div class='tableauPlaceholder' id='viz1649882159299'>
+                <noscript>
+                    <a href='#'>
+                        <img alt='Profit by state ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;Profit_by_US_State&#47;Sheet1&#47;1_rss.png' style='border: none' />
+                    </a>
+                </noscript>
+                <object class='tableauViz'  style='display:none;'>
+                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+                    <param name='embed_code_version' value='3' /> 
+                    <param name='site_root' value='' />
+                    <param name='name' value='Profit_by_US_State&#47;Sheet1' />
+                    <param name='tabs' value='no' />
+                    <param name='toolbar' value='yes' />
+                    <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;Profit_by_US_State&#47;Sheet1&#47;1.png' /> 
+                    <param name='animate_transition' value='yes' />
+                    <param name='display_static_image' value='yes' />
+                    <param name='display_spinner' value='yes' />
+                    <param name='display_overlay' value='yes' />
+                    <param name='display_count' value='yes' />
+                    <param name='language' value='en-US' />
+                    <param name='filter' value='publish=yes' />
+                </object>
+            </div>
+            <p class="caption_text">
+                <h3>Figure 1: Profits by State</h3>
+                    This figure shows the total profits made by each state. As is clearly seen, California had the largest total profit by far. 
+                    In the next few figures, we will verify that California indeed has a better performance record than the other US states, 
+                    and then examine some of the properties that may give a hint as to why the California division did so well.
+            </p>
         </div>
-        <p class="caption_text">
-            <h3>Figure 1: Profits by State</h3>
-                This figure shows the total profits made by each state. As is clearly seen, California had the largest total profit by far. 
-                In the next few figures, we will verify that California indeed has a better performance record than the other US states, 
-                and then examine some of the properties that may give a hint as to why the California division did so well.
-        </p>
-    </div>
-    <script type='text/javascript'>                    
-        var divElement = document.getElementById('viz1649882159299');
-        var vizElement = divElement.getElementsByTagName('object')[0];
-        var scriptElement = document.createElement('script');
-        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-        vizElement.parentNode.insertBefore(scriptElement, vizElement);
-    </script>
+        <script type='text/javascript'>                    
+            var divElement = document.getElementById('viz1649882159299');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+        </script>
 
-    <div class="table_container Right_Image" id="California_Month_By_Month">
-        <div class='tableauPlaceholder' id='viz1649882232232' style='position: relative'>
-            <noscript>
-                <a href='#'>
-                    <img alt='California: Month-by-Month ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ca&#47;California_Month_By_Month&#47;Sheet3&#47;1_rss.png' style='border: none' />
-                </a>
-            </noscript>
-            <object class='tableauViz'  style='display:none;'>
-                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
-                <param name='embed_code_version' value='3' /> 
-                <param name='site_root' value='' />
-                <param name='name' value='California_Month_By_Month&#47;Sheet3' />
-                <param name='tabs' value='no' />
-                <param name='toolbar' value='yes' />
-                <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ca&#47;California_Month_By_Month&#47;Sheet3&#47;1.png' /> 
-                <param name='animate_transition' value='yes' />
-                <param name='display_static_image' value='yes' />
-                <param name='display_spinner' value='yes' />
-                <param name='display_overlay' value='yes' />
-                <param name='display_count' value='yes' />
-                <param name='language' value='en-US' />
-                <param name='filter' value='publish=yes' />
-            </object>
-        </div>                
-        <p class="caption_text">
-            <h3>Figure 2: Chart of California's Profits by Month</h3>
-            As can be seen by monitoring California's profits since the start of this company's birth, California's success is not due to one high-selling month, which could be chalked up to luck.
-            Rather, it shows a steady overall growth over time, which indicates that it is implementing good policies to steadily grow the company.
-        </p>
-    </div>
-    <script type='text/javascript'>                    
-        var divElement = document.getElementById('viz1649882232232');
-        var vizElement = divElement.getElementsByTagName('object')[0];
-        var scriptElement = document.createElement('script');
-        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-        vizElement.parentNode.insertBefore(scriptElement, vizElement);                
-    </script>
+        <div class="table_container Right_Image" id="California_Month_By_Month">
+            <div class='tableauPlaceholder' id='viz1649882232232' style='position: relative'>
+                <noscript>
+                    <a href='#'>
+                        <img alt='California: Month-by-Month ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ca&#47;California_Month_By_Month&#47;Sheet3&#47;1_rss.png' style='border: none' />
+                    </a>
+                </noscript>
+                <object class='tableauViz'  style='display:none;'>
+                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+                    <param name='embed_code_version' value='3' /> 
+                    <param name='site_root' value='' />
+                    <param name='name' value='California_Month_By_Month&#47;Sheet3' />
+                    <param name='tabs' value='no' />
+                    <param name='toolbar' value='yes' />
+                    <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ca&#47;California_Month_By_Month&#47;Sheet3&#47;1.png' /> 
+                    <param name='animate_transition' value='yes' />
+                    <param name='display_static_image' value='yes' />
+                    <param name='display_spinner' value='yes' />
+                    <param name='display_overlay' value='yes' />
+                    <param name='display_count' value='yes' />
+                    <param name='language' value='en-US' />
+                    <param name='filter' value='publish=yes' />
+                </object>
+            </div>                
+            <p class="caption_text">
+                <h3>Figure 2: Chart of California's Profits by Month</h3>
+                As can be seen by monitoring California's profits since the start of this company's birth, California's success is not due to one high-selling month, which could be chalked up to luck.
+                Rather, it shows a steady overall growth over time, which indicates that it is implementing good policies to steadily grow the company.
+            </p>
+        </div>
+        <script type='text/javascript'>                    
+            var divElement = document.getElementById('viz1649882232232');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+        </script>
 
-    <div class="table_container Left_Image" id="California_Profits_by_Category">
-        <div class='tableauPlaceholder' id='viz1649882289101' style='position: relative'>
-            <noscript>
-                <a href='#'>
-                    <img alt='California: Profits by Category ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ca&#47;California_Profits_by_Category&#47;Sheet4&#47;1_rss.png' style='border: none' />
-                </a>
-            </noscript>
-            <object class='tableauViz'  style='display:none;'>
-                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
-                <param name='embed_code_version' value='3' /> 
-                <param name='site_root' value='' />
-                <param name='name' value='California_Profits_by_Category&#47;Sheet4' />
-                <param name='tabs' value='no' />
-                <param name='toolbar' value='yes' />
-                <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ca&#47;California_Profits_by_Category&#47;Sheet4&#47;1.png' /> 
-                <param name='animate_transition' value='yes' />
-                <param name='display_static_image' value='yes' />
-                <param name='display_spinner' value='yes' />
-                <param name='display_overlay' value='yes' />
-                <param name='display_count' value='yes' />
-                <param name='language' value='en-US' />
-                <param name='filter' value='publish=yes' />
-            </object>
-        </div>                
-        <p class="caption_text">
-            <h3>Figure 4: Profit by Category</h3>
-            This figure shows that there is a clear ranking in the categories that gave California the most profit: First Technology, then Office Supplies, Then Furniture.
-        </p>
-    </div>
-    <script type='text/javascript'>                    
-        var divElement = document.getElementById('viz1649882289101');
-        var vizElement = divElement.getElementsByTagName('object')[0];
-        var scriptElement = document.createElement('script');
-        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-        vizElement.parentNode.insertBefore(scriptElement, vizElement);                
-    </script>
+        <div class="table_container Left_Image" id="California_Profits_by_Category">
+            <div class='tableauPlaceholder' id='viz1649882289101' style='position: relative'>
+                <noscript>
+                    <a href='#'>
+                        <img alt='California: Profits by Category ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ca&#47;California_Profits_by_Category&#47;Sheet4&#47;1_rss.png' style='border: none' />
+                    </a>
+                </noscript>
+                <object class='tableauViz'  style='display:none;'>
+                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+                    <param name='embed_code_version' value='3' /> 
+                    <param name='site_root' value='' />
+                    <param name='name' value='California_Profits_by_Category&#47;Sheet4' />
+                    <param name='tabs' value='no' />
+                    <param name='toolbar' value='yes' />
+                    <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ca&#47;California_Profits_by_Category&#47;Sheet4&#47;1.png' /> 
+                    <param name='animate_transition' value='yes' />
+                    <param name='display_static_image' value='yes' />
+                    <param name='display_spinner' value='yes' />
+                    <param name='display_overlay' value='yes' />
+                    <param name='display_count' value='yes' />
+                    <param name='language' value='en-US' />
+                    <param name='filter' value='publish=yes' />
+                </object>
+            </div>                
+            <p class="caption_text">
+                <h3>Figure 4: Profit by Category</h3>
+                This figure shows that there is a clear ranking in the categories that gave California the most profit: First Technology, then Office Supplies, Then Furniture.
+            </p>
+        </div>
+        <script type='text/javascript'>                    
+            var divElement = document.getElementById('viz1649882289101');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+        </script>
 
-    <div class="table_container Right_Image" id="California_Technology_Forecast">
-        <div class='tableauPlaceholder' id='viz1649882284912' style='position: relative'>
-            <noscript>
-                <a href='#'>
-                    <img alt='California: Forecast ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ca&#47;California_Technology_Forecast&#47;Sheet5&#47;1_rss.png' style='border: none' />
-                </a>
-            </noscript>
-            <object class='tableauViz'  style='display:none;'>
-                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
-                <param name='embed_code_version' value='3' /> 
-                <param name='site_root' value='' />
-                <param name='name' value='California_Technology_Forecast&#47;Sheet5' />
-                <param name='tabs' value='no' />
-                <param name='toolbar' value='yes' />
-                <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ca&#47;California_Technology_Forecast&#47;Sheet5&#47;1.png' /> 
-                <param name='animate_transition' value='yes' />
-                <param name='display_static_image' value='yes' />
-                <param name='display_spinner' value='yes' />
-                <param name='display_overlay' value='yes' />
-                <param name='display_count' value='yes' />
-                <param name='language' value='en-US' />
-                <param name='filter' value='publish=yes' />
-            </object>
-        </div>                
-        <p class="caption_text">
-            <h3>Figure 4: Projection of California 2014-2015 Technology Sales</h3>
-            Using statistical analysis, California's profits in its most profitiable category are projected to continue the same steady growth as it has seen in the last four years.
-        </p>
-    </div>
-    <script type='text/javascript'>                    
-        var divElement = document.getElementById('viz1649882284912');
-        var vizElement = divElement.getElementsByTagName('object')[0];
-        var scriptElement = document.createElement('script');
-        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-        vizElement.parentNode.insertBefore(scriptElement, vizElement);                
-    </script>
+        <div class="table_container Right_Image" id="California_Technology_Forecast">
+            <div class='tableauPlaceholder' id='viz1649882284912' style='position: relative'>
+                <noscript>
+                    <a href='#'>
+                        <img alt='California: Forecast ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ca&#47;California_Technology_Forecast&#47;Sheet5&#47;1_rss.png' style='border: none' />
+                    </a>
+                </noscript>
+                <object class='tableauViz'  style='display:none;'>
+                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+                    <param name='embed_code_version' value='3' /> 
+                    <param name='site_root' value='' />
+                    <param name='name' value='California_Technology_Forecast&#47;Sheet5' />
+                    <param name='tabs' value='no' />
+                    <param name='toolbar' value='yes' />
+                    <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ca&#47;California_Technology_Forecast&#47;Sheet5&#47;1.png' /> 
+                    <param name='animate_transition' value='yes' />
+                    <param name='display_static_image' value='yes' />
+                    <param name='display_spinner' value='yes' />
+                    <param name='display_overlay' value='yes' />
+                    <param name='display_count' value='yes' />
+                    <param name='language' value='en-US' />
+                    <param name='filter' value='publish=yes' />
+                </object>
+            </div>                
+            <p class="caption_text">
+                <h3>Figure 4: Projection of California 2014-2015 Technology Sales</h3>
+                Using statistical analysis, California's profits in its most profitiable category are projected to continue the same steady growth as it has seen in the last four years.
+            </p>
+        </div>
+        <script type='text/javascript'>                    
+            var divElement = document.getElementById('viz1649882284912');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+        </script>
 
-    <div class="table_container Left_Image" id="California_Profits_by_Urgency">
-        <div class='tableauPlaceholder' id='viz1649882200921' style='position: relative'>
-            <noscript>
-                <a href='#'>
-                    <img alt='California: Orders by Priority Level ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ca&#47;California_Order_by_Priority_Level&#47;Sheet2&#47;1_rss.png' style='border: none' />
-                </a>
-            </noscript>
-            <object class='tableauViz'  style='display:none;'>
-                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
-                <param name='embed_code_version' value='3' /> 
-                <param name='site_root' value='' />
-                <param name='name' value='California_Order_by_Priority_Level&#47;Sheet2' />
-                <param name='tabs' value='no' />
-                <param name='toolbar' value='yes' />
-                <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ca&#47;California_Order_by_Priority_Level&#47;Sheet2&#47;1.png' /> 
-                <param name='animate_transition' value='yes' />
-                <param name='display_static_image' value='yes' />
-                <param name='display_spinner' value='yes' />
-                <param name='display_overlay' value='yes' />
-                <param name='display_count' value='yes' />
-                <param name='language' value='en-US' />
-                <param name='filter' value='publish=yes' />
-            </object>
-        </div>                
-        <p class="caption_text">
-            <h3>Figure 5: Profit by Priority Level</h3>
-            This graph measures the profit by category as well, but instead measures the <strong>average</strong> profit as well as taking into account the priority level of the orders.
-            This shows that for technology, the largest profits came from the <strong>most urgent</strong>, whereas for Office Supplies, the largest profits came from the <strong>least urgent</strong> orders.
-            This could indicate, for example, that sales reps would see an increase in sales by being more patient and relaxed with their customers while selling Office Supplies, but that they would likely be wasting their time while selling Technology.
-            <br>As furniture was California's lowest-profit category, there was no strong connection between profits and urgency.
-        </p>
+        <div class="table_container Left_Image" id="California_Profits_by_Urgency">
+            <div class='tableauPlaceholder' id='viz1649882200921' style='position: relative'>
+                <noscript>
+                    <a href='#'>
+                        <img alt='California: Orders by Priority Level ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ca&#47;California_Order_by_Priority_Level&#47;Sheet2&#47;1_rss.png' style='border: none' />
+                    </a>
+                </noscript>
+                <object class='tableauViz'  style='display:none;'>
+                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+                    <param name='embed_code_version' value='3' /> 
+                    <param name='site_root' value='' />
+                    <param name='name' value='California_Order_by_Priority_Level&#47;Sheet2' />
+                    <param name='tabs' value='no' />
+                    <param name='toolbar' value='yes' />
+                    <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ca&#47;California_Order_by_Priority_Level&#47;Sheet2&#47;1.png' /> 
+                    <param name='animate_transition' value='yes' />
+                    <param name='display_static_image' value='yes' />
+                    <param name='display_spinner' value='yes' />
+                    <param name='display_overlay' value='yes' />
+                    <param name='display_count' value='yes' />
+                    <param name='language' value='en-US' />
+                    <param name='filter' value='publish=yes' />
+                </object>
+            </div>                
+            <p class="caption_text">
+                <h3>Figure 5: Profit by Priority Level</h3>
+                This graph measures the profit by category as well, but instead measures the <strong>average</strong> profit as well as taking into account the priority level of the orders.
+                This shows that for technology, the largest profits came from the <strong>most urgent</strong>, whereas for Office Supplies, the largest profits came from the <strong>least urgent</strong> orders.
+                This could indicate, for example, that sales reps would see an increase in sales by being more patient and relaxed with their customers while selling Office Supplies, but that they would likely be wasting their time while selling Technology.
+                <br>As furniture was California's lowest-profit category, there was no strong connection between profits and urgency.
+            </p>
+        </div>
+        <script type='text/javascript'>                    
+            var divElement = document.getElementById('viz1649882200921');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+        </script>
     </div>
-    <script type='text/javascript'>                    
-        var divElement = document.getElementById('viz1649882200921');
-        var vizElement = divElement.getElementsByTagName('object')[0];
-        var scriptElement = document.createElement('script');
-        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-        vizElement.parentNode.insertBefore(scriptElement, vizElement);                
-    </script>
 
 </body>
 
