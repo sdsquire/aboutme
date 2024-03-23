@@ -2,7 +2,7 @@
 
 :root {
   --primary-color: #2d50c4; 
-  --background-main: #c8e0e7;
+  --background-main: #e5f5fa;
   --background-1: #ddd;
   --secondary-color: teal;
   --highlight-color: rgb(166, 209, 209);
@@ -90,16 +90,19 @@ nav ul {
   /* PROJECTS */
   /* Project Library */
   .project-table {
-    width: 90%;
+    margin: 0.5%;
+    width: 400px;
     border-collapse: collapse;
   }
   
   .project-table th {
     padding-top: 3%;
-    padding-bottom: 3%;
-    text-align: center;
-    background-color: var(--secondary-color);
-    color: white;
+    text-align: left;
+    width: 50%;
+    font-size: 120%;
+    /* background-color: var(--secondary-color); */
+    /* color: white; */
+    text-decoration: underline;
   } 
 
   .project-table td {
@@ -113,6 +116,10 @@ nav ul {
   }
   .project-table td:empty{
     background-color: var(--background);
+  }
+
+  .project-table td[data-url]:not([data-url="blank"]){
+    cursor:pointer;
   }
   /* Tableau Visualization */
 

@@ -3,7 +3,7 @@ window.onload = function() {
 
     for (var i = 0; i < cells.length; i++) {
         cells[i].addEventListener('click', function() {
-            var link = this.getAttribute('data-link');
+            var link = this.getAttribute('data-url');
             if (link && link != "blank") {
                 window.location = link;
             }
