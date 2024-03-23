@@ -88,6 +88,38 @@ nav ul {
 
 
   /* PROJECTS */
+  /* Project Library */
+  .project-table {
+    width: 90%;
+    border-collapse: collapse;
+  }
+  
+  .project-table th {
+    border: 1px solid black;
+    padding: 1%;
+  }
+
+  .project-table tr:nth-child(even) {
+    background-color: var(#f2f2f2);
+  }
+
+  .project-table th {
+    padding-top: 3%;
+    padding-bottom: 3%;
+    text-align: center;
+    background-color: var(--secondary-color);
+    color: white;
+  } 
+
+  .project-table td {
+    padding: 1%;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .project-table td:hover {
+    background-color: var(black);
+    color: white;
+  }
   /* Tableau Visualization */
 
   .Tableau-summary {
