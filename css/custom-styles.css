@@ -12,7 +12,7 @@
 body, nav {
   margin: 0;
   padding: 0;
-  background: var(--background-color)
+  background: var(--background-main)
 }
 
 .text-body{
