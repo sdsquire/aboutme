@@ -1,0 +1,238 @@
+:root {
+    --primary-blue: #0066cc;
+    --secondary-blue: #004999;
+    --light-blue: #e6f0ff;
+    --text-color: #333;
+    --border-color: #ddd;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.navbar {
+    background-color: var(--primary-blue);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+}
+
+.nav-links a.active {
+    background-color: var(--secondary-blue);
+    border-radius: 4px;
+}
+
+.search-box input {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    width: 200px;
+}
+
+.search-box button {
+    padding: 0.5rem 1rem;
+    background-color: var(--secondary-blue);
+    border: none;
+    color: white;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 250px 1fr 300px;
+    gap: 20px;
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.left-sidebar {
+    background-color: var(--light-blue);
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.category-list {
+    list-style: none;
+}
+
+.category-list li {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.category-list li:hover {
+    background-color: #d9e6f7;
+}
+
+.category-list li.active {
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+.category-list li.category-header {
+    font-weight: bold;
+    color: var(--secondary-blue);
+    padding-top: 1rem;
+    cursor: default;
+}
+
+.submit-button {
+    background-color: var(--primary-blue);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.problem-card {
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+
+.problem-meta {
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.problem-meta span {
+    margin-right: 1rem;
+}
+
+.right-sidebar {
+    background-color: var(--light-blue);
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.news-updates h2, .news-updates h3 {
+    margin-bottom: 1rem;
+}
+
+.news-updates ul {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.news-updates li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.content-section {
+    margin-top: 2rem;
+}
+
+.content-section h2 {
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+    font-size: 1.4rem;
+}
+
+.submission-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.submission-card {
+    background-color: white;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: box-shadow 0.2s;
+}
+
+.submission-card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.submission-card h3 {
+    color: var(--primary-blue);
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+}
+
+.submission-tags {
+    margin: 0.8rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    background-color: var(--light-blue);
+    color: var(--primary-blue);
+    padding: 0.3rem 0.8rem;
+    border-radius: 16px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.submission-card p {
+    color: #555;
+    line-height: 1.5;
+    margin: 0.8rem 0;
+}
+
+.submission-meta {
+    margin-top: 1rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid var(--border-color);
+    color: #666;
+    font-size: 0.9rem;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.submission-meta span {
+    display: flex;
+    align-items: center;
+}
+
+/* Add these styles for the linked card */
+a.submission-card {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+a.submission-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+a.submission-card h3 {
+    color: var(--primary-blue);
+} 
