@@ -2,24 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>RCMExchange - Medical Coding & RCM Knowledge Base</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            max-width: 100%;
+        }
+        
+        img, video {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav class="navbar">
+            <button class="menu-toggle" id="leftMenuToggle">☰</button>
             <div class="logo">RCMExchange</div>
             <div class="nav-links">
                 <a href="#" class="active">Home</a>
                 <a href="#">Categories</a>
                 <a href="#">About</a>
             </div>
+            <button class="menu-toggle" id="rightMenuToggle">⋮</button>
         </nav>
     </header>
 
     <div class="container">
         <aside class="left-sidebar">
+            <button class="close-sidebar" id="closeLeftSidebar">×</button>
             <div class="search-container">
                 <input type="text" placeholder="Search payors (e.g., BCBS, United)..." class="search-input">
             </div>
@@ -148,6 +162,7 @@
         </main>
 
         <aside class="right-sidebar">
+            <button class="close-sidebar" id="closeRightSidebar">×</button>
             <div class="news-sections">
                 <a href="#" class="news-section">
                     <h2>General RCM News</h2>

@@ -60,4 +60,40 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.bookmark').addEventListener('click', function() {
         this.classList.toggle('bookmarked');
     });
+
+    // Left sidebar
+    const leftMenuToggle = document.getElementById('leftMenuToggle');
+    const closeLeftSidebar = document.getElementById('closeLeftSidebar');
+    const leftSidebar = document.querySelector('.left-sidebar');
+
+    leftMenuToggle?.addEventListener('click', () => {
+        leftSidebar.classList.add('active');
+    });
+
+    closeLeftSidebar?.addEventListener('click', () => {
+        leftSidebar.classList.remove('active');
+    });
+
+    // Right sidebar
+    const rightMenuToggle = document.getElementById('rightMenuToggle');
+    const closeRightSidebar = document.getElementById('closeRightSidebar');
+    const rightSidebar = document.querySelector('.right-sidebar');
+
+    rightMenuToggle?.addEventListener('click', () => {
+        rightSidebar.classList.add('active');
+    });
+
+    closeRightSidebar?.addEventListener('click', () => {
+        rightSidebar.classList.remove('active');
+    });
+
+    // Close sidebars when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!leftSidebar.contains(e.target) && e.target !== leftMenuToggle) {
+            leftSidebar.classList.remove('active');
+        }
+        if (!rightSidebar.contains(e.target) && e.target !== rightMenuToggle) {
+            rightSidebar.classList.remove('active');
+        }
+    });
 }); 
