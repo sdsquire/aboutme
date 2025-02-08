@@ -60,41 +60,4 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.bookmark').addEventListener('click', function() {
         this.classList.toggle('bookmarked');
     });
-
-    // Left sidebar
-    const leftMenuToggle = document.getElementById('leftMenuToggle');
-    const rightMenuToggle = document.getElementById('rightMenuToggle');
-    const closeButtons = document.querySelectorAll('.close-sidebar');
-    const leftSidebar = document.querySelector('.left-sidebar');
-    const rightSidebar = document.querySelector('.right-sidebar');
-    const overlay = document.querySelector('.sidebar-overlay');
-
-    function openSidebar(sidebar) {
-        sidebar.classList.add('active');
-        overlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeSidebars() {
-        leftSidebar.classList.remove('active');
-        rightSidebar.classList.remove('active');
-        overlay.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-
-    leftMenuToggle?.addEventListener('click', () => openSidebar(leftSidebar));
-    rightMenuToggle?.addEventListener('click', () => openSidebar(rightSidebar));
-    
-    closeButtons.forEach(button => {
-        button.addEventListener('click', closeSidebars);
-    });
-
-    overlay.addEventListener('click', closeSidebars);
-
-    // Close sidebars when screen becomes wide enough
-    window.addEventListener('resize', () => {
-        if (window.innerWidth >= 1200) {
-            closeSidebars();
-        }
-    });
 }); 

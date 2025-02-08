@@ -10,9 +10,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    max-width: 100%;
 }
 
 body {
+    margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
@@ -62,48 +65,33 @@ body {
 
 .container {
     display: flex;
+    flex-direction: row;
     gap: 20px;
-    padding: 10px;
-    max-width: 1400px;
-    margin: 0 auto;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-.left-sidebar, .right-sidebar {
-    display: none;
-    background: white;
+.categories {
+    flex: 0 0 250px;
+    min-width: 200px;
     padding: 20px;
-    position: fixed;
-    top: 0;
-    bottom: 0;
     background: white;
-    z-index: 1000;
-    overflow-y: auto;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    margin-right: 0;
 }
 
-.left-sidebar {
-    left: 0;
-    width: 250px;
-    transform: translateX(-100%);
-}
-
-.right-sidebar {
-    right: 0;
-    width: 300px;
-    transform: translateX(100%);
-}
-
-.left-sidebar.active {
-    transform: translateX(0);
-}
-
-.right-sidebar.active {
-    transform: translateX(0);
+.right-section {
+    flex: 0 0 300px;
+    min-width: 200px;
+    padding: 20px;
+    background: white;
+    margin-left: 0;
 }
 
 .menu-toggle {
-    display: block;
+    display: none;
     background: none;
     border: none;
     color: white;
@@ -113,6 +101,7 @@ body {
 }
 
 .close-sidebar {
+    display: none;
     position: absolute;
     top: 10px;
     right: 10px;
@@ -123,8 +112,10 @@ body {
 }
 
 .main-content {
-    flex: 1;
+    flex: 0 0 800px;
+    min-width: 500px;
     padding: 10px;
+    margin: 0;
 }
 
 .category-list {
@@ -286,7 +277,30 @@ a.submission-card h3 {
 /* Search inputs */
 .search-input, .main-search-input {
     width: 100%;
-    max-width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+}
+
+.search-input:focus, .main-search-input:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+}
+
+.main-search {
+    margin: 20px 0;
+    width: 100%;
+    max-width: 800px;
+}
+
+.search-container {
+    padding: 10px;
+    margin-bottom: 15px;
 }
 
 /* Tags */
@@ -310,34 +324,41 @@ a.submission-card h3 {
         justify-content: space-between;
     }
 
+    /* Remove the grid layout for submission cards */
+    .submission-list {
+        flex-direction: column;
+        gap: 15px;
+    }
+
     .submission-card {
-        width: calc(50% - 20px);
+        width: 100%; /* Make cards full width */
     }
 }
 
 /* Media query for desktop (1024px and up) */
 @media (min-width: 1024px) {
     .container {
-        flex-direction: row;
+        justify-content: center;
+    }
+
+    .main-content {
+        flex: 0 0 800px;
+        padding: 0 20px;
+        margin: 0;
     }
 
     .menu-toggle {
         display: none;
     }
 
-    .left-sidebar {
+    .categories {
         width: 250px;
         flex-shrink: 0;
     }
 
-    .right-sidebar {
+    .right-section {
         width: 300px;
         flex-shrink: 0;
-    }
-
-    .main-content {
-        flex: 1;
-        padding: 0 20px;
     }
 
     /* Question page layout */
@@ -351,6 +372,15 @@ a.submission-card h3 {
 
     .question-sidebar.right {
         width: 300px;
+    }
+
+    .submission-list {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .submission-card {
+        width: 100%;
     }
 }
 
@@ -366,31 +396,12 @@ a.submission-card h3 {
 }
 
 /* Remove the fixed positioning styles */
-.left-sidebar.active,
-.right-sidebar.active {
-    position: static;
-}
-
-/* Clean up any remaining fixed position styles */
 .left-sidebar,
-.right-sidebar {
-    position: static;
-    left: auto;
-    right: auto;
-    top: auto;
-    transition: none;
-    box-shadow: none;
-}
-
-.close-sidebar {
+.right-sidebar,
+.left-sidebar.active,
+.right-sidebar.active,
+.sidebar-overlay {
     display: none;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
 }
 
 /* Main content takes full width on mobile */
@@ -409,52 +420,6 @@ a.submission-card h3 {
     width: 100%;
 }
 
-/* Tablet and up */
-@media (min-width: 768px) {
-    .submission-list {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    .submission-card {
-        width: calc(50% - 10px);
-    }
-}
-
-/* Desktop */
-@media (min-width: 1024px) {
-    .menu-toggle, .close-sidebar {
-        display: none;
-    }
-
-    .left-sidebar, .right-sidebar {
-        display: block;
-        position: static;
-        box-shadow: none;
-    }
-
-    .container {
-        flex-direction: row;
-        max-width: 1400px;
-        margin: 0 auto;
-    }
-
-    .left-sidebar {
-        width: 250px;
-        flex-shrink: 0;
-    }
-
-    .right-sidebar {
-        width: 300px;
-        flex-shrink: 0;
-    }
-
-    .main-content {
-        flex: 1;
-        padding: 0 20px;
-    }
-}
-
 /* Overlay for when sidebars are open */
 .sidebar-overlay {
     display: none;
@@ -469,4 +434,91 @@ a.submission-card h3 {
 
 .sidebar-overlay.active {
     display: block;
+}
+
+/* Enhanced action button styles */
+.action-button {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 25px;
+    background-color: #4a90e2;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 120px;
+}
+
+.action-button:hover {
+    background-color: #357abd;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(74, 144, 226, 0.2);
+}
+
+.action-button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* Enhanced news section styles */
+.news-sections {
+    padding: 15px;
+}
+
+.news-section {
+    display: block;
+    padding: 15px 20px;
+    margin: 10px 0;
+    background-color: #f8f9fa;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.news-section:hover {
+    background-color: #fff;
+    border-color: #4a90e2;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(74, 144, 226, 0.1);
+}
+
+.news-section h2 {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+}
+
+.news-section:hover h2 {
+    color: #4a90e2;
+}
+
+/* Base styles for responsive images */
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Update the media queries */
+@media (max-width: 1399px) {
+    .wrapper {
+        margin: 0;
+        max-width: none;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container {
+        margin: 0 auto;
+        justify-content: center;
+    }
+}
+
+/* Add wrapper styles */
+.wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
 } 
