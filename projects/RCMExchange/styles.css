@@ -20,7 +20,7 @@ body {
 
 .navbar {
     background-color: var(--primary-blue);
-    padding: 1rem 2rem;
+    padding: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -62,17 +62,69 @@ body {
 
 .container {
     display: flex;
-    flex-direction: column;
     gap: 20px;
     padding: 10px;
     max-width: 1400px;
     margin: 0 auto;
 }
 
+.left-sidebar, .right-sidebar {
+    display: none;
+    background: white;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    background: white;
+    z-index: 1000;
+    overflow-y: auto;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
 .left-sidebar {
-    background-color: var(--light-blue);
-    padding: 1rem;
-    border-radius: 4px;
+    left: 0;
+    width: 250px;
+    transform: translateX(-100%);
+}
+
+.right-sidebar {
+    right: 0;
+    width: 300px;
+    transform: translateX(100%);
+}
+
+.left-sidebar.active {
+    transform: translateX(0);
+}
+
+.right-sidebar.active {
+    transform: translateX(0);
+}
+
+.menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.close-sidebar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.main-content {
+    flex: 1;
+    padding: 10px;
 }
 
 .category-list {
@@ -127,12 +179,6 @@ body {
 
 .problem-meta span {
     margin-right: 1rem;
-}
-
-.right-sidebar {
-    background-color: var(--light-blue);
-    padding: 1rem;
-    border-radius: 4px;
 }
 
 .news-updates h2, .news-updates h3 {
@@ -235,34 +281,6 @@ a.submission-card:hover {
 
 a.submission-card h3 {
     color: var(--primary-blue);
-}
-
-/* Sidebar styling */
-.left-sidebar, .right-sidebar {
-    width: 100%;
-    background: white;
-    padding: 20px;
-}
-
-/* Main content */
-.main-content {
-    width: 100%;
-    padding: 10px;
-}
-
-.submission-card {
-    width: 100%;
-    margin-bottom: 15px;
-    padding: 15px;
-}
-
-/* Question page specific */
-.question-container {
-    flex-direction: column;
-}
-
-.question-sidebar {
-    width: 100%;
 }
 
 /* Search inputs */
@@ -435,4 +453,20 @@ a.submission-card h3 {
         flex: 1;
         padding: 0 20px;
     }
+}
+
+/* Overlay for when sidebars are open */
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+}
+
+.sidebar-overlay.active {
+    display: block;
 } 

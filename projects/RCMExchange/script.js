@@ -63,37 +63,38 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Left sidebar
     const leftMenuToggle = document.getElementById('leftMenuToggle');
-    const closeLeftSidebar = document.getElementById('closeLeftSidebar');
-    const leftSidebar = document.querySelector('.left-sidebar');
-
-    leftMenuToggle?.addEventListener('click', () => {
-        leftSidebar.classList.add('active');
-    });
-
-    closeLeftSidebar?.addEventListener('click', () => {
-        leftSidebar.classList.remove('active');
-    });
-
-    // Right sidebar
     const rightMenuToggle = document.getElementById('rightMenuToggle');
-    const closeRightSidebar = document.getElementById('closeRightSidebar');
+    const closeButtons = document.querySelectorAll('.close-sidebar');
+    const leftSidebar = document.querySelector('.left-sidebar');
     const rightSidebar = document.querySelector('.right-sidebar');
+    const overlay = document.querySelector('.sidebar-overlay');
 
-    rightMenuToggle?.addEventListener('click', () => {
-        rightSidebar.classList.add('active');
-    });
+    function openSidebar(sidebar) {
+        sidebar.classList.add('active');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
 
-    closeRightSidebar?.addEventListener('click', () => {
+    function closeSidebars() {
+        leftSidebar.classList.remove('active');
         rightSidebar.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    leftMenuToggle?.addEventListener('click', () => openSidebar(leftSidebar));
+    rightMenuToggle?.addEventListener('click', () => openSidebar(rightSidebar));
+    
+    closeButtons.forEach(button => {
+        button.addEventListener('click', closeSidebars);
     });
 
-    // Close sidebars when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!leftSidebar.contains(e.target) && e.target !== leftMenuToggle) {
-            leftSidebar.classList.remove('active');
-        }
-        if (!rightSidebar.contains(e.target) && e.target !== rightMenuToggle) {
-            rightSidebar.classList.remove('active');
+    overlay.addEventListener('click', closeSidebars);
+
+    // Close sidebars when screen becomes wide enough
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 1200) {
+            closeSidebars();
         }
     });
 }); 
